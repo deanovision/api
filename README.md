@@ -115,6 +115,8 @@ On Success Returns Array of Users
 
 `https://anywhere-fitness.herokuapp.com/classes/add/:id`
 
+Returns an Array of Classes for the `user_id` provided
+
 Include `user_id` in the Body of the Request and Class ID in the URL
 
 ```
