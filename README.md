@@ -28,7 +28,7 @@ Heroku deployment https://anywhere-fitness.herokuapp.com/
 ```
 {
   "id": 3,
-  "instructor": "false"
+  "instructor": false
   "token": "eyJhbGciOiJ3ODQ0MX0.6es5Q9hZJw5U8a5EyWucbMM60xRoGX5_U3kQQ5BVPH0"
 }
 ```
@@ -100,7 +100,7 @@ On Success Returns Array of Users
 #### GET Classes by Client
 `https://anywhere-fitness.herokuapp.com/classes/client/:id`
 
-#### POST Class
+#### POST Add Class
 `https://anywhere-fitness.herokuapp.com/classes`
 ```
 
@@ -110,6 +110,19 @@ On Success Returns Array of Users
 	"location": "201 Baker St"
 }
 ```
+
+#### POST ADD Client to Class By ID
+
+`https://anywhere-fitness.herokuapp.com/classes/add/:id`
+
+Include `user_id` in the Body of the Request and Class ID in the URL
+
+```
+{
+	"user_id": 2
+}
+```
+
 #### DELETE Class
 `https://anywhere-fitness.herokuapp.com/classes/:id`
 
