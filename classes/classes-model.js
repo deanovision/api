@@ -60,7 +60,8 @@ function getClassesByUser(id) {
       "classes.location",
       "users_classes.uses_remaining",
       "classes.image",
-      "classes.id"
+      "classes.id",
+      "users_classes.user_id"
     );
 }
 function getUsersByClass(id) {
@@ -109,7 +110,7 @@ function removdeUserFromClass(classId, user_id) {
     .first()
     .del()
     .then(count => {
-      return getClassesByUser(user_id);
+      return getUsersByClass(user_id);
     });
 }
 function updateClassUses(classId, user_id, updatedInfo) {

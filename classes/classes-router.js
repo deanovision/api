@@ -39,10 +39,10 @@ router.get("/:id", restricted, (req, res) => {
       res.status(500).json({ message: "error getting class by ID", err });
     });
 });
-//////ADD USER to Class by Class ID -> Takes class ID from Reqs and User ID from Token
+////// FOR CLIENTS ADDING CLASSES ADD USER to Class by Class ID -> Takes class ID from Reqs and User ID from Token
 router.post("/add/:id", restricted, (req, res) => {
   const class_id = req.params.id;
-  const user_id = req.decodedJwt.subject;
+  const user_id = req.body.user_id;
   classes
     .addUserToClass(class_id, user_id)
     .then(classes => {
@@ -56,7 +56,7 @@ router.post("/add/:id", restricted, (req, res) => {
 //////REMOVE USER from class by Class ID
 router.delete("/remove/:id", restricted, (req, res) => {
   classes
-    .removdeUserFromClass(req.params.id, req.decodedJwt.subject)
+    .removdeUserFromClass(req.params.id, req.body)
     .then(classes => {
       res.status(200).json(classes);
     })
