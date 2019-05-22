@@ -11,6 +11,7 @@ module.exports = {
   removeClass,
   removdeUserFromClass,
   removeClassesByInstructor,
+  updateClassesByInstructor,
   updateClassUses
 };
 
@@ -46,6 +47,17 @@ function removeClassesByInstructor(id, classId) {
     .where({ instructor_id: id, id: classId })
     .first()
     .del()
+    .then(count => {
+      return getClassesByInstructor(id);
+    });
+}
+function updateClassesByInstructor(id, classId, updatedInfo) {
+  return db
+    .from("classes")
+    .join("users", "users.id", "=", "classes.instructor_id")
+    .where({ instructor_id: id, id: classId })
+    .first()
+    .update(updatedInfo)
     .then(count => {
       return getClassesByInstructor(id);
     });

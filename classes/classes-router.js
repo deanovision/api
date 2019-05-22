@@ -116,6 +116,40 @@ router.delete("/instructor/:id/remove", restricted, (req, res) => {
     res.status(403).json({ message: "not authorized to delete this class" });
   }
 });
+///// UPDATE CLASS BY ID BY INSTRUCTOR
+router.put("/instructor/:id/update", restricted, async (req, res) => {
+  try {
+    const matchInstructor = await classes
+      .getClassById(req.params.id)
+      .then(classObj => {
+        return classObj.instructor_id;
+      });
+    if (Number(matchInstructor) === Number(req.decodedJwt.subject)) {
+      classes
+        .updateClassesByInstructor(
+          req.decodedJwt.subject,
+          req.params.id,
+          req.body
+        )
+        .then(classes => {
+          if (!classes) {
+            res.status(404).json({ message: "class does not exist" });
+          } else {
+            res.status(200).json(classes);
+          }
+        })
+        .catch(err => {
+          res
+            .status(500)
+            .json({ message: "error getting classes by instructor", err });
+        });
+    } else {
+      res.status(403).json({ message: "not authorized to update this class" });
+    }
+  } catch (err) {
+    console.log(err);
+  }
+});
 ////GET ALL Classes For Client by Client ID
 router.get("/client/:id", restricted, (req, res) => {
   classes
