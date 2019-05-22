@@ -172,7 +172,7 @@ Returns an Array of All Classes By Instructor
 #### PUT Update Uses Remaining By Class ID
 `https://anywhere-fitness.herokuapp.com/classes/:id/update`
 
-Send `user_id` and `uses_remaining`in the Body of the Request and Class ID in URL
+Send `user_id` and `uses_remaining` in the Body of the Request and Class ID in URL
 
 Returns an Array of Clients Signed up for the Class Based on ID Provided
 
