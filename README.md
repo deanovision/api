@@ -100,6 +100,39 @@ On Success Returns Array of Users
 #### GET Classes by Client
 `https://anywhere-fitness.herokuapp.com/classes/client/:id`
 
+Returns an Array of All Classes Signed up by the Client add id for the client in the URL
+```
+[
+  {
+    "name": "CrossFit",
+    "schedule": "Thursday & Saturday 11:00 AM",
+    "location": "123 Main Street",
+    "uses_remaining": 10,
+    "image": null,
+    "id": 1,
+    "user_id": 2
+  },
+  {
+    "name": "Yoga",
+    "schedule": "Sunday 9:00 AM",
+    "location": "1600 Fox Drive",
+    "uses_remaining": 10,
+    "image": null,
+    "id": 3,
+    "user_id": 2
+  },
+  {
+    "name": "Pilates",
+    "schedule": "MWF 11:00 AM",
+    "location": "123 Main Street",
+    "uses_remaining": 10,
+    "image": null,
+    "id": 4,
+    "user_id": 2
+  }
+]
+```
+
 #### POST Add Class
 `https://anywhere-fitness.herokuapp.com/classes`
 ```
