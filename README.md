@@ -179,7 +179,7 @@ On Failure
 #### DELETE Class By Instructor ID
 `https://anywhere-fitness.herokuapp.com/classes/instructor/:id/remove`
 
-Send the Class You Want to Delete in the Body of the Request
+Send the Class You Want to Delete in the Body of the Request and Send Instructor ID in URL
 
 ```
 {
