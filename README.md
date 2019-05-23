@@ -201,8 +201,8 @@ Returns an Array of All Classes By Instructor
   }
 ]
 ```
-#### DELETE Client From Class by Class ID
-`https://anywhere-fitness.herokuapp.com/classes/:id/remove`
+#### DELETE Client From Class by Class ID For CLIENTS
+`https://anywhere-fitness.herokuapp.com/classes/remove/:id/client`
 
 Send Class ID in the URL String and the User ID in the Body of the Request
 
@@ -211,7 +211,16 @@ Send Class ID in the URL String and the User ID in the Body of the Request
 	"id": 4
 }
 ```
+#### DELETE Client From Class by Class ID For INSTRUCTORS
+`https://anywhere-fitness.herokuapp.com/classes/remove/:id/client`
 
+Send Class ID in the URL String and the User ID in the Body of the Request
+
+```
+{
+	"id": 3
+}
+```
 
 #### PUT Update Uses Remaining By Class ID
 `https://anywhere-fitness.herokuapp.com/classes/:id/update`
