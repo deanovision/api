@@ -210,7 +210,7 @@ Send Class ID in the URL String and the User ID in the Body of the Request
 
 ```
 {
-	"id": 4
+	"user_id": 4
 }
 ```
 #### DELETE Client From Class by Class ID For INSTRUCTORS
@@ -222,12 +222,12 @@ Send Class ID in the URL String and the User ID in the Body of the Request
 
 ```
 {
-	"id": 3
+	"user_id": 3
 }
 ```
 
 #### PUT Update Uses Remaining By Class ID
-`https://anywhere-fitness.herokuapp.com/classes/:id/update`
+`https://anywhere-fitness.herokuapp.com/classes/:id/list/update`
 
 Send `user_id` and `uses_remaining` in the Body of the Request and Class ID in URL
 
