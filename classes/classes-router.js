@@ -61,7 +61,7 @@ router.delete("/remove/:id/client", restricted, (req, res) => {
       res.status(200).json(classes);
     })
     .catch(err => {
-      res.status(500).json({ message: "error removing user from class" });
+      res.status(500).json({ message: "error removing user from class", err });
     });
 });
 ///// REMOVE USER from Class by ID Instructor
