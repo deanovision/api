@@ -204,6 +204,8 @@ Returns an Array of All Classes By Instructor
 #### DELETE Client From Class by Class ID For CLIENTS
 `https://anywhere-fitness.herokuapp.com/classes/remove/:id/client`
 
+Returns an Array of Classes That Client is Signed up for
+
 Send Class ID in the URL String and the User ID in the Body of the Request
 
 ```
@@ -213,6 +215,8 @@ Send Class ID in the URL String and the User ID in the Body of the Request
 ```
 #### DELETE Client From Class by Class ID For INSTRUCTORS
 `https://anywhere-fitness.herokuapp.com/classes/remove/:id/client`
+
+Returns an Array of Clients Signed up for Class Based on ID Provided in URL
 
 Send Class ID in the URL String and the User ID in the Body of the Request
 
