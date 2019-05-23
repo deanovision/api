@@ -53,11 +53,23 @@ router.post("/add/:id", restricted, (req, res) => {
       res.status(500).json({ message: "error adding client to class", err });
     });
 });
-//////REMOVE USER from class by Class ID
-router.delete("/remove/:id", restricted, (req, res) => {
+//////REMOVE USER from class by Class ID Client
+router.delete("/remove/:id/client", restricted, (req, res) => {
   classes
-    .removdeUserFromClass(req.params.id, req.body)
+    .removeUserFromClassClient(req.params.id, req.body.user_id)
     .then(classes => {
+      res.status(200).json(classes);
+    })
+    .catch(err => {
+      res.status(500).json({ message: "error removing user from class" });
+    });
+});
+///// REMOVE USER from Class by ID Instructor
+router.delete("/remove/:id/instructor", restricted, (req, res) => {
+  classes
+    .removeUserFromClassInstructor(req.params.id, Number(req.body.user_id))
+    .then(classes => {
+      console.log(classes);
       res.status(200).json(classes);
     })
     .catch(err => {

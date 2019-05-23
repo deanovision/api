@@ -9,7 +9,8 @@ module.exports = {
   addClass,
   addUserToClass,
   removeClass,
-  removdeUserFromClass,
+  removeUserFromClassClient,
+  removeUserFromClassInstructor,
   removeClassesByInstructor,
   updateClassesByInstructor,
   updateClassUses
@@ -116,13 +117,22 @@ function addUserToClass(classId, user_id) {
       });
     });
 }
-function removdeUserFromClass(classId, user_id) {
+function removeUserFromClassInstructor(classId, user_id) {
   return db("users_classes")
     .where({ class_id: classId, user_id: user_id })
     .first()
     .del()
     .then(count => {
-      return getUsersByClass(user_id);
+      return getUsersByClass(classId);
+    });
+}
+function removeUserFromClassClient(classId, user_id) {
+  return db("users_classes")
+    .where({ class_id: classId, user_id: user_id })
+    .first()
+    .del()
+    .then(count => {
+      return getClassesByUser(user_id);
     });
 }
 function updateClassUses(classId, user_id, updatedInfo) {
