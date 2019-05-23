@@ -214,7 +214,7 @@ Send Class ID in the URL String and the User ID in the Body of the Request
 }
 ```
 #### DELETE Client From Class by Class ID For INSTRUCTORS
-`https://anywhere-fitness.herokuapp.com/classes/remove/:id/client`
+`https://anywhere-fitness.herokuapp.com/classes/remove/:id/instructor`
 
 Returns an Array of Clients Signed up for Class Based on ID Provided in URL
 
