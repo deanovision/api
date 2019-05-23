@@ -132,7 +132,7 @@ function removeUserFromClassClient(classId, user_id) {
     .first()
     .del()
     .then(count => {
-      return count;
+      return getClassesByUser(user_id);
     });
 }
 function updateClassUses(classId, user_id, updatedInfo) {
