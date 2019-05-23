@@ -38,7 +38,8 @@ Heroku deployment https://anywhere-fitness.herokuapp.com/
 `https://anywhere-fitness.herokuapp.com/classes`
 
 ```
-{
+[
+  {
     "id": 1,
     "name": "CrossFit",
     "schedule": "Thursday & Saturday 11:00 AM",
@@ -54,6 +55,7 @@ Heroku deployment https://anywhere-fitness.herokuapp.com/
     "image": null,
     "instructor_id": 3
   }
+]
   ```
 #### GET Classes by ID  
 `https://anywhere-fitness.herokuapp.com/classes/:id`
