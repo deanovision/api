@@ -2,6 +2,10 @@
 
 #### Heroku deployment https://anywhere-fitness.herokuapp.com/
 
+### What is Anywhere Fitness?
+
+Today fitness happens everywhere and today's fitness instructors need a convenient way to create classes, accept payments and manage class attendance. Anywhere Fitness is designed to solve this problem. Fitness Instructor now have the power to create and manage classes and accept payments in the palm of their hands. 
+
 ---
 
 ### Start Server
