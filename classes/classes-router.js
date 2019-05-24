@@ -4,7 +4,7 @@ const instructor = require("../auth/instructor-only");
 const classes = require("./classes-model");
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/", restricted, (req, res) => {
   classes
     .getClasses()
     .then(classes => {
